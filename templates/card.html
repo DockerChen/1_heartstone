@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ cardid }}</title>
+</head>
+<body>
+<div align="center">
+    <img src="{{ url_for('static',filename=path+'.png') }}">
+    <div style="color:darkslateblue">
+        <table width="800" border="1" align="center">
+            {% for d in data2 %}
+                {% if d['id']==cardid %}
+                    <h4><font color="#8b0000">{{ d['name'] }}</font></h4>
+
+
+                    <tr>
+
+                        <td>卡牌效果：</td>
+                        <td>{{ d['text']|safe }}</td>
+
+                    </tr>
+                    <tr>
+                        <td>卡牌描述：</td>
+                        <td>{{ d['flavor'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>如何获得：</td>
+                        <td>{{ d['howToEarn']|safe }}</td>
+                    </tr>
+                    <tr>
+                        <td>卡牌类别：</td>
+                        <td>{{ d['cardClass'] }}</td>
+                    </tr>
+{#                    <tr>#}
+{#                        <td>卡牌机制：</td>#}
+{#                        <td>{{ d['mechanics'][0] }}</td>#}
+{#                    </tr>#}
+                    <tr>
+                        <td>稀有度：</td>
+                        <td>{{ d['rarity'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>卡牌类型：</td>
+                        <td>{{ d['type'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>卡牌包：</td>
+                        <td>{{ d['set'] }}</td>
+                    </tr>
+
+
+
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

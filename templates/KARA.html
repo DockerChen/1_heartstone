@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KARA</title>
+</head>
+<body>
+<p>共{{ length }}张卡牌</p>
+<table>
+    {% for l in ll %}
+        <tr>
+            <td><a href="{{ url_for('card', cardid=dt[l]) }}">{{ l }}</a></td>
+        </tr>
+
+    {% endfor %}
+
+
+</table>
+
+</body>
+</html>

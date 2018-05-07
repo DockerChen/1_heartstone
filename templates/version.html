@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ v_name }}</title>
+</head>
+<body>
+<p>版本：<b><font color="#ff8c00">{{ v_name }}</font></b></p>
+<p>共<strong><font color="#ff4500">{{ length }}</font></strong>张卡牌</p>
+<table>
+    {% for l in ll %}
+        <tr>
+            <td><a href="{{ url_for('card', cardid=dt[l]) }}">{{ l }}</a></td>
+        </tr>
+
+    {% endfor %}
+
+
+</table>
+</body>
+</html>
